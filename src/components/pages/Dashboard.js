@@ -15,11 +15,14 @@ import './dashboard.css';
 import Profile from './Profile';
 
 function Dashboard() {
-  const data = [
+  // Sample data
+  const lineData = [
     { name: 'Jan', value: 400 },
     { name: 'Feb', value: 300 },
     { name: 'Mar', value: 500 },
     { name: 'Apr', value: 200 },
+    { name: 'May', value: 350 },
+    { name: 'Jun', value: 420 },
   ];
 
   const pieData = [
@@ -32,43 +35,54 @@ function Dashboard() {
 
   return (
     <div className="dashboard-layout">
-      {/* Sidebar with Profile */}
+      {/* Sidebar with profile */}
       <div className="sidebar">
         <Profile />
       </div>
 
-      {/* Main dashboard content */}
+      {/* Main content */}
       <div className="main-content">
         <h2>Dashboard</h2>
 
+        {/* Line Chart Section */}
         <div className="chart-section">
-          <ResponsiveContainer width="100%" height={300}>
-            <LineChart data={data}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Line type="monotone" dataKey="value" stroke="#dc2626" />
-            </LineChart>
-          </ResponsiveContainer>
+          <div className="section-heading">Monthly Sales Trend</div>
+          <div className="chart-wrapper">
+            <ResponsiveContainer width="100%" height="100%">
+              <LineChart data={lineData}>
+                <XAxis dataKey="name" />
+                <YAxis />
+                <Tooltip />
+                <Line type="monotone" dataKey="value" stroke="#dc2626" strokeWidth={2} />
+              </LineChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
+        {/* Pie Chart Section */}
         <div className="pie-section">
-          <PieChart width={400} height={300}>
-            <Pie
-              data={pieData}
-              dataKey="value"
-              cx="50%"
-              cy="50%"
-              outerRadius={100}
-              fill="#dc2626"
-              label
-            >
-              {pieData.map((entry, index) => (
-                <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-              ))}
-            </Pie>
-            <Legend />
-          </PieChart>
+          <div className="section-heading">Department Performance</div>
+          <div className="pie-wrapper">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={pieData}
+                  dataKey="value"
+                  nameKey="name"
+                  cx="50%"
+                  cy="50%"
+                  outerRadius={100}
+                  fill="#dc2626"
+                  label
+                >
+                  {pieData.map((entry, index) => (
+                    <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                  ))}
+                </Pie>
+                <Legend />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
         </div>
       </div>
     </div>
@@ -76,4 +90,3 @@ function Dashboard() {
 }
 
 export default Dashboard;
-
