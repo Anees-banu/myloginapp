@@ -1,0 +1,39 @@
+/* dashboard.css */
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+  background-color: #fef2f2;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 300px;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-right: 1px solid #fca5a5;
+  overflow-y: auto;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.main-content h2 {
+  color: #b91c1c;
+  margin-bottom: 1.5rem;
+}
+
+/* Chart sections */
+.chart-section,
+.pie-section {
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.05);
+}
+

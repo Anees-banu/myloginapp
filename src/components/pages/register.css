@@ -1,0 +1,58 @@
+
+/* register.css */
+
+/* Container styling */
+.form-container {
+  max-width: 400px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.08);
+}
+
+/* Title */
+.form-container h2 {
+  text-align: center;
+  color: #b91c1c;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Form label styling */
+.form-label {
+  font-weight: 500;
+  color: #991b1b;
+}
+
+/* Input fields */
+.form-control {
+  background-color: #fff5f5;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* Error alert */
+.alert-danger {
+  text-align: center;
+  margin-bottom: 1rem;
+  background-color: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #b91c1c;
+}
+
+/* Submit button */
+.btn-custom {
+  width: 100%;
+  background-color: #dc2626;
+  border: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.6rem;
+  border-radius: 8px;
+}
+
+.btn-custom:hover {
+  background-color: #b91c1c;
+}
